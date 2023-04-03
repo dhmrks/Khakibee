@@ -1,0 +1,48 @@
+{
+    "noRoomsAvail": "No available sessions today",
+    "duration": "Duration:",
+    "numOfPlayers": "Players:",
+    "week": {
+        "mo": "Mo",
+        "tu": "Tu",
+        "we": "We",
+        "th": "Th",
+        "fr": "Fr",
+        "sa": "Sa",
+        "su": "Su"
+    },
+    "tabs": {
+        "room": "Escape Game",
+        "date": "Choose Date",
+        "form": "Player Details"
+    },
+    "form": {
+        "players": "Team Members:",
+        "playersSelect": "Please select number of players",
+        "name": "Full Name:",
+        "email": "Email:",
+        "mobile": "Phone number:",
+        "notes": "Notes:",
+        "gdpr1": "I agree with the",
+        "gdpr2": "and the",
+        "gdpr3": "of the company.(*)",
+        "tncs": "Terms & Conditiions",
+        "plc": "GDRP",
+        "submitBtn": "RESERVE",
+        "required": "Fields with (*) are required.",
+        "loading": "Loading....",
+        "process": "Paradox Project's Booking System process your appointment!!",
+        "errorMsg": "The reservation you tried to make is not available. Τry again for a different time or day.",
+        "errorHeader": "Dear customer...",
+        "return": "GO BACK"
+    },
+    "finish":{
+        "bookingInfo": "Your Booking info:",
+        "checkEmail": "Your booking has been succeded. Please check your emails for more information about your reservation.",
+        "important": "IMPORTANT:",
+        "infoAboutMail": "If you can not see the Paradox confirmation email, please check your SPAM folder, sometimes SPAM filtering catch emails in this layer.",
+        "weAreHere": " We are located here",
+        "address": "Address: ",
+        "newBooking": "Back to games"    
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "conn": "user:pass@tcp(domain:port)/database",
+    "port": 3001,
+    "alloworigin": "http://localhost:3000",
+    "subpath": "api",
+    "websocket": "http://localhost:8080"
+}

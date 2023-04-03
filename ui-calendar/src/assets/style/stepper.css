@@ -1,0 +1,131 @@
+/* ================================== */
+/* ============= STEPS ============== */
+/* ================================== */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+button.astep {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+ul.stepper {
+  counter-reset: section;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0.5em -3.2rem;
+  padding: 0 1.5rem 1.5rem;
+  cursor: pointer;
+}
+ul.stepper > li:not(:last-of-type) {
+  margin-bottom: 0.625rem;
+}
+ul.stepper li .astep {
+  padding: 0 1.5rem;
+  text-align: center;
+}
+ul.stepper li .astep .circle {
+  display: inline-block;
+  color: #fff;
+  border-radius: 50%;
+  width: 1.75rem;
+  height: 1.75rem;
+  text-align: center;
+  line-height: 1.7rem;
+  margin-right: 0.5rem;
+}
+ul.stepper li .astep .label {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.38);
+}
+ul.stepper li .choice {
+  font-weight: 300;
+  color: rgba(51, 50, 50, 0.38);
+}
+ul.stepper li.active .astep .circle {
+  background-color: #0d6efd !important;
+}
+ul.stepper li.active .astep .label {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.87);
+}
+ul.stepper li.completed .astep .circle {
+  background-color: #0d6efd !important;
+}
+ul.stepper li.completed .astep .label {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.87);
+}
+ul.stepper li.todo .astep .circle {
+  background-color: #a4b7c1 !important;
+}
+ul.stepper li.todo .astep .label {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.87);
+}
+.stepper-horizontal {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.stepper-horizontal > li:not(:last-of-type) {
+  margin-bottom: 0 !important;
+}
+.stepper-horizontal li {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+.stepper-horizontal li .astep .label {
+  margin-top: 0.63rem;
+}
+.stepper-horizontal li:not(:first-child):before {
+  content: "";
+  position: relative;
+  flex: 1;
+  margin: 0.5rem 0 0 0;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.stepper-horizontal li:not(:last-child):after {
+  content: "";
+  position: relative;
+  flex: 1;
+  margin: 0rem 0 0 0;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 430px) {
+  .stepper-horizontal li .astep .label {
+    margin-right: 0.5rem;
+ }
+  .stepper-horizontal::after li .astep .label {
+    content: "\a";
+    white-space: pre;
+ }
+  .stepper-horizontal::before li .astep .choice {
+    content: "\a";
+    white-space: pre;
+ }
+}
+@media (max-width: 990px) {
+  .cl-app-body {
+    margin-top: 10px !important;
+ }
+}

@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+  nginx:
+    image: registry.gitlab.com/khakibee/khakibee/nginx:${ENVIRONMENT}
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - HOST=${HOST}
+    depends_on:
+      - ui-admin
+      - api-admin
+      - ui-calendar
+      - api-calendar
+      
+  ui-admin:
+    image: registry.gitlab.com/khakibee/khakibee/ui-admin:${ENVIRONMENT}
+    container_name: ui-admin
+
+  api-admin:
+    image: registry.gitlab.com/khakibee/khakibee/api-admin:${ENVIRONMENT}
+    container_name: api-admin
+    environment: 
+      - JWTSECRET=${JWTSECRET}
+      - SQLSTRING=${SQLSTRING}
+      - SMTPUSERNAME=${SMTPUSERNAME}
+      - SMTPPASSWORD=${SMTPPASSWORD}
+      - SMTPHOST=${SMTPHOST}
+      - SMTPPORT=${SMTPPORT}
+
+  ui-calendar:
+    image: registry.gitlab.com/khakibee/khakibee/ui-calendar:${ENVIRONMENT}
+    container_name: ui-calendar
+
+  api-calendar:
+    image: registry.gitlab.com/khakibee/khakibee/api-calendar:${ENVIRONMENT}
+    container_name: api-calendar
+    environment: 
+      - SQLSTRING=${SQLSTRING}
+
