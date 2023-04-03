@@ -1,6 +1,6 @@
 ### Khakibee project
 
-This project is a online booking system that consist of two web aplications, client front-end and admin front-end, and one Restfull API
+This project is a online booking system that consist of two web aplications, client front-end and admin front-end, and a Restfull API
 
 #### Helpfull links
 
