@@ -1,0 +1,29 @@
+FROM golang:1.19.3-alpine as builder
+
+# Set a directory for the app
+WORKDIR /api
+
+# Copy all the files to the container
+COPY ./ /api
+
+# Download all dependencies. Dependencies will be cached if the go.mod and the go.sum files are not changed 
+RUN go mod download
+
+RUN go build -o api ./cmd/calendar
+
+# Start a new stage from scratch
+FROM alpine:latest as api-admin
+
+WORKDIR /root
+
+# Timezone data needed for alpine images
+RUN apk add --no-cache tzdata
+
+# enviroment variable for the running port of API
+ENV PORT 80
+
+# Copy the Pre-built binary file from the previous stage. Observe we also copied the .env file
+COPY --from=builder /api/api .
+COPY --from=builder /api/cmd/calendar/.env .
+
+ENTRYPOINT ["./api"]
